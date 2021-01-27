@@ -1,0 +1,6 @@
+build
+.gradle
+appliation.yml
+!config/templates/appliation.yml
+logs
+.idea
