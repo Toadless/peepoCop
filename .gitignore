@@ -1,6 +1,7 @@
 build
 .gradle
-appliation.yml
-!config/templates/appliation.yml
+application.yml
+!config/templates/application.yml
 logs
 .idea
+javaDoc

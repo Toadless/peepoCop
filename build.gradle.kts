@@ -36,13 +36,12 @@ application {
     mainClassName = "uk.toadl3ss.peepocop.main.Launcher"
 }
 
-tasks.withType<ShadowJar> {
-    manifest {
-        attributes(
-            mapOf(
-                "Main-Class" to application.mainClassName
-            )
-        )
+tasks {
+    named<ShadowJar>("shadowJar") {
+        archiveBaseName.set("app")
+        mergeServiceFiles()
+        manifest {
+            attributes(mapOf("Main-Class" to application.mainClassName))
+        }
     }
-    archiveFileName.set("peepoCop.jar")
 }
