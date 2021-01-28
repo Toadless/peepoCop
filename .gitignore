@@ -1,7 +1,6 @@
 build
 .gradle
 application.yml
-!config/templates/application.yml
 logs
 .idea
 javaDoc
