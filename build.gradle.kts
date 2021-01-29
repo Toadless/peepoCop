@@ -33,7 +33,7 @@ dependencies {
 }
 
 application {
-    mainClassName = "uk.toadl3ss.peepocop.main.Launcher"
+    mainClassName = "net.toaddev.peepocop.main.Launcher"
 }
 
 tasks {

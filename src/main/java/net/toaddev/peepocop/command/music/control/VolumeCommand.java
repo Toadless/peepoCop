@@ -72,9 +72,12 @@ public class VolumeCommand extends Command
             channel.sendMessage("You need to be in the same voice channel as me for this to work!").queue();
             return;
         }
+        final GuildMusicManager musicManager = PlayerManager.getInstance().getMusicManager(ctx.getGuild());
+        final AudioPlayer audioPlayer = musicManager.audioPlayer;
         if (ctx.getArgs().length < 2)
         {
-            channel.sendMessage("You need to provide a volume to set").queue();
+            channel.sendMessage("Current volume: `" + audioPlayer.getVolume() + "`.").queue();
+            return;
         }
         try
         {
@@ -87,8 +90,6 @@ public class VolumeCommand extends Command
                 channel.sendMessage("Please provide a valid volume to set").queue();
                 return;
             }
-            final GuildMusicManager musicManager = PlayerManager.getInstance().getMusicManager(ctx.getGuild());
-            final AudioPlayer audioPlayer = musicManager.audioPlayer;
             audioPlayer.setVolume(volume);
             channel.sendMessageFormat("Set the volume to: %s", volume).queue();
         } catch (NumberFormatException e)

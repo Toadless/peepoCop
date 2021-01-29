@@ -35,7 +35,7 @@ public class TestCommand extends Command
 {
     public TestCommand()
     {
-        super("test", "A simple test command");
+        super("test", null);
         addFlags(CommandFlag.DISABLED);
         addSelfPermissions(Permission.MANAGE_SERVER);
     }

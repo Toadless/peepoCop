@@ -94,7 +94,7 @@ public abstract class Command
         {
             EmbedUtils.sendError(event.getChannel(), "I do not have the required permission to perform this action.");
         }
-        else if (hasFlag(CommandFlag.SERVER_ADMIN_ONLY) && !event.isDeveloper() || !event.isServerAdmin())
+        else if (hasFlag(CommandFlag.SERVER_ADMIN_ONLY) && !event.isDeveloper() || hasFlag(CommandFlag.SERVER_ADMIN_ONLY) && !event.isServerAdmin())
         {
             EmbedUtils.sendError(event.getChannel(), "You do not have sufficient permissions to perform this action!");
         }
